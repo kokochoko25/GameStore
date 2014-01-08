@@ -1,0 +1,84 @@
+﻿
+.big-font {
+    font-size: 1.5em;
+    font-weight:bold;
+}
+
+.med-font {
+    font-size: 1.2em;
+    font-weight:bold;
+}
+
+.group-container {
+    min-height: 20px;
+    min-width: 323px;
+    padding: 20px 0 0 20px;
+    margin: 0 -10px 30px -10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.item-divider {
+    padding: 0 20px 20px 0;
+}
+
+.item-container {
+    overflow: hidden;
+    padding:5px 0;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.item-img-container {
+    width: 243px;
+    height: 323px;
+    margin: auto;
+}
+
+.item-content-container {
+}
+
+@media (min-width: 992px) {
+    .item-content-container {
+        position: relative;
+        min-height: 323px;
+    }
+}
+
+.item-content-heading {
+    padding:1em 0;
+}
+
+.item-content-body {
+}
+
+.item-content-footer {
+}
+
+@media (min-width: 992px) {
+    .item-content-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.box-shot-container {
+}
+
+.side-note {
+    font-weight:bold;
+    margin:0 5px;
+    color: #999;
+}
+
+.footer {
+    padding:2em;
+}

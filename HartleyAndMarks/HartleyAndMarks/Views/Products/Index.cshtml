@@ -1,0 +1,91 @@
+﻿@model IEnumerable<HartleyAndMarks.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h2>New Releases</h2>
+    <div class="group-container">
+        @foreach (var m in Model.Where(p => p.IsNew()))
+        {
+            <div class="col-xs-12 col-lg-6 item-divider">
+                <div class="item-container">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="item-img-container">
+                            <img src="~/Content/images/@m.BoxShot" width="243" height="323" alt="@m.Name" title="@m.Name" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        @*<div style="margin-left:253px; overflow:auto">*@
+                        <div class="item-content-container">
+                            <div class="item-content-heading">
+                                <span class="big-font">@m.Name</span>
+                                <span class="side-note">@m.Publisher</span>
+                            </div>
+                            <div class="item-content-body">
+                                <p>
+                                    @m.Description
+                                </p>
+                            </div>
+                            <div class="item-content-footer">
+                                <input type="button" data-name="@m.Name" value="Buy Now" class="btn btn-success btn-block"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <h1>Coming Soon</h1>
+    <div class="group-container">
+        @foreach (var m in Model.Where(p => p.IsNotReleased()))
+        {
+            <div class="col-xs-12 col-lg-6 item-divider">
+                <div class="item-container">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="item-img-container">
+                            <img src="~/Content/images/@m.BoxShot" width="243" height="323" alt="@m.Name" title="@m.Name" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        @*<div style="margin-left:253px; overflow:auto">*@
+                        <div class="item-content-container">
+                            <div class="item-content-heading">
+                                <span class="big-font">@m.Name</span>
+                                <span class="side-note">@m.Publisher</span>
+                            </div>
+                            <div class="item-content-body">
+                                <p>
+                                    @m.Description
+                                </p>
+                            </div>
+                            <div class="item-content-footer">
+                                <span class="med-font">Release Date: </span>
+                                <span class="">@m.ReleaseDate.ToLongDateString()</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+</table>
+@section scripts{
+    <script>
+
+        $(function () {
+
+            $('input:button').click(function () {
+                buy(this);
+            });
+
+        });
+
+    </script>
+}
