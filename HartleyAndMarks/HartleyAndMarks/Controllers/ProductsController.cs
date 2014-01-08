@@ -54,7 +54,7 @@ namespace HartleyAndMarks.Controllers
                 Genre = "genre4",
                 ReleaseDate = new DateTime(2014, 3, 21)
             });
-            return View(products.OrderBy(p => p.ReleaseDate));
+            return View(products.OrderByDescending(p => p.ReleaseDate));
         }
 
     }
